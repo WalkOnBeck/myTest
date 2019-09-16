@@ -1,0 +1,16 @@
+## 服务器端口号
+server:
+  port: 8087
+##dubbo 注册到注册中心名称
+dubbo:
+  application:
+    name: member
+    ##协议
+  protocol:
+    name: dubbo
+    port: 20881
+  registry:
+    address: zookeeper://127.0.0.1:2181
+  #scan:
+  ##dubbo实现类扫包范围
+   # base-packages: com.nyq.api.member.impl

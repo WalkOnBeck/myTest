@@ -1,0 +1,11 @@
+Manifest-Version: 1.0
+Implementation-Title: nyq-springboot2.0-dubbo_order_web
+Implementation-Version: 0.0.1-SNAPSHOT
+Built-By: MECHREVO
+Implementation-Vendor-Id: com.nyq
+Build-Jdk: 1.8.0_191
+Implementation-URL: https://projects.spring.io/spring-boot/#/spring-bo
+ ot-starter-parent/nyq-springboot2.0-dubbo_parent/nyq-springboot2.0-du
+ bbo_order_web
+Created-By: Maven Integration for Eclipse
+
