@@ -1,6 +1,10 @@
 package com.nyq.api.controller;
 
+import java.util.Enumeration;
 import java.util.List;
+
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cloud.client.ServiceInstance;
@@ -23,6 +27,7 @@ public class OrderController {
 		String url = "http://zk-member/getMember";
 		String result = restTemplate.getForObject(url, String.class);
 		System.out.println("会员服务调用订单服务,result:" + result);
+		
 		return result;
 	}
 	
@@ -35,4 +40,21 @@ public class OrderController {
 		}
 		return instances;
 	}
+	
+	@RequestMapping("/getSession")
+	public Object getSession(HttpServletRequest request) {
+		HttpSession session = request.getSession();
+		session.setAttribute("aa", "aa");
+		Enumeration<String> attrs = session.getAttributeNames();
+		// 遍历attrs中的 
+		while(attrs.hasMoreElements()){ 
+			// 获取session键值 
+			String name1 = attrs.nextElement().toString(); 
+			// 根据键值取session中的值 
+			Object vakue = session.getAttribute(name1); 
+			// 打印结果 
+			System.out.println("------" + name1 + ":" + vakue +"--------\n");}
+		return null;
+	}
+
 }
